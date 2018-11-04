@@ -13,9 +13,6 @@ Overview
       - | |travis| |appveyor| |requires|
         | |codecov|
         | |codacy|
-    * - package
-      - | |version| |wheel| |supported-versions| |supported-implementations|
-        | |commits-since|
 
 .. |docs| image:: https://readthedocs.org/projects/diary-bot/badge/?style=flat
     :target: https://readthedocs.org/projects/diary-bot
