@@ -42,27 +42,6 @@ Overview
     :target: https://www.codacy.com/app/chanjunweimy/diary-bot
     :alt: Codacy Code Quality Status
 
-.. |version| image:: https://img.shields.io/pypi/v/diary-bot.svg
-    :alt: PyPI Package latest release
-    :target: https://pypi.python.org/pypi/diary-bot
-
-.. |commits-since| image:: https://img.shields.io/github/commits-since/chanjunweimy/diary-bot/v0.1.0.svg
-    :alt: Commits since latest release
-    :target: https://github.com/chanjunweimy/diary-bot/compare/v0.1.0...master
-
-.. |wheel| image:: https://img.shields.io/pypi/wheel/diary-bot.svg
-    :alt: PyPI Wheel
-    :target: https://pypi.python.org/pypi/diary-bot
-
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/diary-bot.svg
-    :alt: Supported versions
-    :target: https://pypi.python.org/pypi/diary-bot
-
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/diary-bot.svg
-    :alt: Supported implementations
-    :target: https://pypi.python.org/pypi/diary-bot
-
-
 .. end-badges
 
 Telegram bot that is used for recording diary implemented in python
