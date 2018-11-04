@@ -82,3 +82,8 @@ Note, to combine the coverage data from all the tox environments run:
       - ::
 
             PYTEST_ADDOPTS=--cov-append tox
+
+
+.. image:: https://api.codacy.com/project/badge/Grade/56e5a1aa787a455db865de920c68f224
+   :alt: Codacy Badge
+   :target: https://app.codacy.com/app/chanjunweimy/diary-bot?utm_source=github.com&utm_medium=referral&utm_content=chanjunweimy/diary-bot&utm_campaign=Badge_Grade_Dashboard
