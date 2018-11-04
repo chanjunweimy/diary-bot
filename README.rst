@@ -35,7 +35,7 @@ Overview
     :alt: Coverage Status
     :target: https://codecov.io/github/chanjunweimy/diary-bot
 
-.. |codacy| image:: https://img.shields.io/codacy/REPLACE_WITH_PROJECT_ID.svg
+.. |codacy| image:: https://img.shields.io/codacy/6b179ec130c545f7a4ed7f782eaf16da.svg
     :target: https://www.codacy.com/app/chanjunweimy/diary-bot
     :alt: Codacy Code Quality Status
 
