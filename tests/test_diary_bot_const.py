@@ -14,3 +14,7 @@ def test_token():
         os.environ['TOKEN_TELEGRAM'] = ans
         assert const.TOKEN() == ans
         os.environ['TOKEN_TELEGRAM'] = ''
+
+
+def test_intent_start():
+    assert len(const.INTENT_START()) == 1
