@@ -1,5 +1,6 @@
-import diary_bot.const as const
 import os
+
+import diary_bot.const as const
 
 
 def test_token():

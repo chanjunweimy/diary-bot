@@ -22,7 +22,7 @@ def unmapped_words(bot, update):
 
 
 def handleNotExpectedCase(update):
-    update.message.reply_text("Hi.")
+    update.message.reply_text("Hi. :)")
     update.message.reply_text("Please tap `/start` to start. ^^")
 
 
