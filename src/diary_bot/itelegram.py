@@ -1,7 +1,8 @@
 import logging
+from functools import wraps
 
 import const
-import telegram
+from telegram import ChatAction
 from telegram.ext import CommandHandler
 from telegram.ext import Filters
 from telegram.ext import MessageHandler
@@ -11,17 +12,36 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 
+def send_action(action):
+    """Sends `action` while processing func command."""
+
+    def decorator(func):
+        @wraps(func)
+        def command_func(*args, **kwargs):
+            bot, update = args
+            bot.send_chat_action(chat_id=update.message.chat_id, action=action)
+            func(bot, update, **kwargs)
+        return command_func
+    return decorator
+
+
+send_typing_action = send_action(ChatAction.TYPING)
+send_upload_video_action = send_action(ChatAction.UPLOAD_VIDEO)
+send_upload_photo_action = send_action(ChatAction.UPLOAD_PHOTO)
+
+
+@send_typing_action
 def start(bot, update):
-    bot.send_chat_action(chat_id=update.message.chat_id, action=telegram.ChatAction.TYPING)
     update.message.reply_text("Hi, I'm Diary Bot, your personal diary. Nice to meet you. :)")
 
 
+@send_typing_action
 def unmapped_words(bot, update):
-    bot.send_chat_action(chat_id=update.message.chat_id, action=telegram.ChatAction.TYPING)
-    handleNotExpectedCase(update)
+    handleNotExpectedCase(bot, update)
 
 
-def handleNotExpectedCase(update):
+@send_typing_action
+def handleNotExpectedCase(bot, update):
     update.message.reply_text("Hi. :)")
     update.message.reply_text("Please tap `/start` to start. ^^")
 
