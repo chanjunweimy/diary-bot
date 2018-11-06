@@ -1,0 +1,1 @@
+web: python .\src\diary_bot\itelegram.py
