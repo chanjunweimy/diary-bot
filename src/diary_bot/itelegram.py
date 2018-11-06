@@ -1,8 +1,11 @@
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-import telegram
 import logging
-import const
 
+import const
+import telegram
+from telegram.ext import CommandHandler
+from telegram.ext import Filters
+from telegram.ext import MessageHandler
+from telegram.ext import Updater
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
