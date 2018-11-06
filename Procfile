@@ -1,1 +1,1 @@
-web: python .\src\diary_bot\itelegram.py
+web: python src/diary_bot/itelegram.py
