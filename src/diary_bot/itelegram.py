@@ -1,26 +1,31 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import telegram
 import logging
-from const import *
+import const
+
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
+
 def start(bot, update):
     bot.send_chat_action(chat_id=update.message.chat_id, action=telegram.ChatAction.TYPING)
     update.message.reply_text("Hi, I'm Diary Bot, your personal diary. Nice to meet you. :)")
-    
+
+
 def unmapped_words(bot, update):
     bot.send_chat_action(chat_id=update.message.chat_id, action=telegram.ChatAction.TYPING)
     handleNotExpectedCase(update)
 
+
 def handleNotExpectedCase(update):
     update.message.reply_text("Hi.")
     update.message.reply_text("Please tap `/start` to start. ^^")
-    
+
+
 def setupBot():
     # Create Updater object and attach dispatcher to it
-    updater = Updater(TOKEN())
+    updater = Updater(const.TOKEN())
     dispatcher = updater.dispatcher
     print("Bot started")
 
@@ -35,10 +40,12 @@ def setupBot():
     updater.start_polling()
 
     # Run the bot until you press Ctrl-C
-    updater.idle() 
+    updater.idle()
+
 
 def main():
     setupBot()
+
 
 if __name__ == '__main__':
     main()
