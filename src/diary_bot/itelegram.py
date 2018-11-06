@@ -32,18 +32,23 @@ send_upload_photo_action = send_action(ChatAction.UPLOAD_PHOTO)
 
 @send_typing_action
 def start(bot, update):
-    update.message.reply_text("Hi, I'm Diary Bot, your personal diary. Nice to meet you. :)")
+    handle_intent(bot, update, const.INTENT_START())
 
 
 @send_typing_action
 def unmapped_words(bot, update):
-    handleNotExpectedCase(bot, update)
+    handle_not_expected_case(bot, update)
 
 
 @send_typing_action
-def handleNotExpectedCase(bot, update):
-    update.message.reply_text("Hi. :)")
+def handle_not_expected_case(bot, update):
     update.message.reply_text("Please tap `/start` to start. ^^")
+
+
+def handle_intent(bot, update, intentReplies):
+    for intentReply in intentReplies:
+        bot.send_chat_action(chat_id=update.message.chat_id, action=ChatAction.TYPING)
+        update.message.reply_text(intentReply)
 
 
 def setupBot():
